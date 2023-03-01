@@ -1,0 +1,380 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+   {% block title %} <title>QUALIFICATIONS</title> {% endblock %}
+   <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'theme/css/styles.css' %}" rel="stylesheet" />
+
+   </head>
+   <body id="page-top">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Home</a></li>
+                    <li class="nav-item mx-0 mx-lg-1 dropdown">
+                        <a class="nav-link py-3 px-0 px-lg-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'accounts:login_page' %}">Log in</a></li>
+                          <li><a class="dropdown-item" href="{% url 'accounts:logout_page' %}">Log out</a></li>
+                        </ul>
+                      </li>
+
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="img-fluid" src="{% static 'theme/assets/img/portfolio/bg-top.png' %}" alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Hello there</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">Interested in learning more about qualifications for a job or career that you’re considering? Check out our job description pages.</p>
+        </div>
+    </header>
+       
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Job Descriptions</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center">
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'theme/assets/img/portfolio/finance.png' %}" alt="..." />
+                    </div>
+                    <p class="text-center text-secondary" style="font-family: monospace;">{{bank.namejob}} Read..</p>
+                </div>
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'theme/assets/img/portfolio/HR.png' %}" alt="..." />
+                    </div>
+                    <p class="text-center text-secondary" style="font-family: monospace;">{{hr.namejob}} Read..</p>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'theme/assets/img/portfolio/Security.png' %}" alt="..." />
+                    </div>
+                    <p class="text-center text-secondary" style="font-family: monospace;">{{isa.namejob}} Read..</p>
+                </div>
+                <!-- Portfolio Item 4-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'theme/assets/img/portfolio/it.png' %}" alt="..." />
+                    </div>
+                    <p class="text-center text-secondary" style="font-family: monospace;">{{it.namejob}} Read..</p>
+                </div>
+                <!-- Portfolio Item 5-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'theme/assets/img/portfolio/data.png' %}" alt="..." />
+                    </div>
+                    <p class="text-center text-secondary" style="font-family: monospace;">{{dba.namejob}} Read..</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section-->
+    <section class="page-section bg-primary text-white mb-0" id="about">
+        <div class="container">
+            <!-- About Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- About Section Content-->
+            <div class="row">
+                <div class="col-lg-4 ms-auto"><p class="lead">Job titles are common in most job profiles in companies and are important for any company, because they show the structure organizational and levels of work, and play an important role in clarifying responsibility, scope of decision-making and tasks that can be performed,It helps the employee to know his duties and obligations to the company, on which the job description is mainly based.</p></div>
+                <div class="col-lg-4 me-auto"><p class="lead">Are you interested in learning more about the qualifications for the job or career you are considering? We have provided a site for you to help you search for it. Check out our job description pages.</p></div>
+            </div>            
+        </div>
+    </section>
+
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">{{bank.namejob}}</h2>
+                                    <div class="figure-caption ">{{bank.description}}</div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="figure-caption ">{{bank.posttime}}</div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'theme/assets/img/portfolio/finance.png' %}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                        <h4>Requirements for {{bank.namejob}}</h4>
+                                            <p class="mb-4">Job postings for bank accountants generally call for candidates with at least a bachelors degree in accounting,
+                                                finance, or a related field.Employers oftentimes prefer to hire people who have studied accounting at the graduate level and have received an MBA.
+                                                Bank accountants also frequently hold a Certified Public Accountant license.</p>
+
+                                        <h4>Professional certification</h4>
+                                        <p class="mb-4">Professional certification is the process by which a person proves that he or she has the knowledge,
+                                            experience and skills to perform a specific job and the tasks in which they have been trained,It must be renewed periodically,
+                                            and may be valid for a specific period of time</p>
+                                            
+                                    <p class="mb-4">Some lessons for this certification</p>
+                                    <button class="btn btn-primary"  onclick="window.location.href = 'https://edudelphi.com/online-cpa-certification-saudi-arabia/'; ">
+                                        CPA
+                                    </button>
+                                    <button class="btn btn-primary"  onclick="window.location.href = 'https://www.udemy.com/course/level-1-cfa-exam-prep-bootcamp/'; ">
+                                        CFA
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">{{hr.namejob}}</h2>
+                                    <div class="figure-caption ">{{hr.description}}</div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="figure-caption ">{{hr.posttime}}</div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'theme/assets/img/portfolio/HR.png' %}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                        <h4>Requirements for {{hr.namejob}}</h4>
+                                            <p class="mb-4">A bachelors degree in human resources or business administration is often required in order to become a junior recruiter.
+                                                A background in sales is also a plus. However, prior recruiting experience is not always required because junior recruiters receive on-the-job training once hired.
+                                                Other educational and training requirements vary from company to company.</p>
+
+                                        <h4>Professional certification</h4>
+                                            <p class="mb-4">Professional certification is the process by which a person proves that he or she has the knowledge,
+                                                experience and skills to perform a specific job and the tasks in which they have been trained,It must be renewed periodically,
+                                                and may be valid for a specific period of time</p>
+                                        <p class="mb-4">Some lessons for this certification</p>
+                                    <button class="btn btn-primary"  onclick="window.location.href = 'https://www.tharwah.net/ar/shrm-advanced-certificate?gclid=EAIaIQobChMIytmfn66v_QIV3BoGAB1xMgD7EAAYASABEgKoZPD_BwE'; ">
+                                        SHRM ACHRM
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Modal 3-->
+           <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">{{isa.namejob}}</h2>
+                                    <div class="figure-caption ">{{isa.description}}</div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="figure-caption ">{{isa.posttime}}</div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'theme/assets/img/portfolio/Security.png' %}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <h4>Requirements for {{isa.namejob}}</h4>
+                                            <p class="mb-4">Obtaining a bachelor's degree in computer science or other engineering or scientific bachelor's degrees related to computer science and networks.
+                                                There is a trend from some organizations towards professional certificate programs specialized in the field of information security for this job.</p>
+
+                                        <h4>Professional certification</h4>
+                                            <p class="mb-4">Professional certification is the process by which a person proves that he or she has the knowledge,
+                                                experience and skills to perform a specific job and the tasks in which they have been trained,It must be renewed periodically,
+                                                and may be valid for a specific period of time</p>
+                                        <p class="mb-4">Some lessons for this certification</p>      
+                                    <button class="btn btn-primary"  onclick="window.location.href = 'https://techcampus.com/course/securityplus'; ">
+                                        CompTIA Security+
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">{{it.namejob}}</h2>
+                                    <div class="figure-caption ">{{it.description}}</div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="figure-caption ">{{it.posttime}}</div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'theme/assets/img/portfolio/it.png' %}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <h4>Requirements for {{it.namejob}}</h4>
+                                            <p class="mb-4">Generally, IT support analysts need at least an associate’s degree in a related field, but a bachelor’s degree in computer science or information systems can open up more job opportunities.
+                                                They should also be comfortable with computer programs and hardware,
+                                                and applicants who have completed computer classes may be able to secure a IT support analyst position without a degree.
+                                                IT support analysts can also seek out certification from several different organizations.</p>
+
+                                        <h4>Professional certification</h4>
+                                            <p class="mb-4">Professional certification is the process by which a person proves that he or she has the knowledge,
+                                                experience and skills to perform a specific job and the tasks in which they have been trained,It must be renewed periodically,
+                                                and may be valid for a specific period of time</p>
+                                        <p class="mb-4">Some lessons for this certification</p>
+                                    <button class="btn btn-primary"  onclick="window.location.href = 'https://www.udemy.com/course/comptia-itf-comptia-it-fundamentals-itf-fc0-u61-prep/'; ">
+                                        CompTIA ITF+ 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-1">{{dba.namejob}}</h2>
+                                    <div class="figure-caption ">{{dba.description}}</div>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="figure-caption ">{{dba.posttime}}</div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{% static 'theme/assets/img/portfolio/data.png' %}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <h4>Requirements for {{dba.namejob}}</h4>
+                                            <p class="mb-4">Oracle Dbas need to have a bachelor’s degree in computer science, information systems management, or a related field to get a job. This education covers coursework in topics such as database construction, database management,
+                                                programming languages, database security, and other similar topics. Oracle also offers several certifications that make Oracle Dbas more marketable.
+                                                These certifications cover Oracle products in sub-fields, such as applications, enterprise management, operating systems, and databases.</p>
+
+                                        <h4>Professional certification</h4>
+                                            <p class="mb-4">Professional certification is the process by which a person proves that he or she has the knowledge,
+                                                experience and skills to perform a specific job and the tasks in which they have been trained,It must be renewed periodically,
+                                                and may be valid for a specific period of time</p>
+                                        <p class="mb-4">Some lessons for this certification</p>
+                                    <button class="btn btn-primary"  onclick="window.location.href = 'https://apex.oracle.com/en/learn/training/'; ">
+                                        ORACLE APEX 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    
+        {% block content %}
+        {% endblock %}
+
+
+
+     <!-- Bootstrap core JS-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Core theme JS-->
+     <script src="{% static 'theme/js/scripts.js' %}"></script>
+
+     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+   </body>
+</html>
+
