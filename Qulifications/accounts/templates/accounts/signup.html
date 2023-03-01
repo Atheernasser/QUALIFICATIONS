@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <header>
-        <title>SIGN UP</title>
-    </header>
-    <body>
+{% extends 'accounts/base.html' %}
+{% block title%}<title>sign up</title>{% endblock %}
+
+{% block content %}
         
-        <div class="container">
+      <div class="container">
             <h1>sign up</h1>
         
             <form method="post" action="">
@@ -31,11 +29,8 @@
                 <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">create a new user</button>
               </form>
         
-        </div>
+         </div>
         
+ {% endblock %}
 
-    </body>
-</html>
-
-
-
+ 

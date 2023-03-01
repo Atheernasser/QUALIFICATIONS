@@ -3,6 +3,7 @@ from django.http import HttpRequest, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
+
 # Create your views here.
 def signup(request:HttpRequest):
     """ This function view create new user """

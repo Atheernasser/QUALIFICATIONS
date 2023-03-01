@@ -1,37 +1,40 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends 'accounts/base.html' %}
+{% block title%}<title>log in</title>{% endblock %}
 
-    </head>
-    <body>
-        {% if msg %}
-          {{msg}}
-        {% endif %}
-        <div class="container">
-            <h1></h1>
-        
-            <form method="post" action="">
-                {% csrf_token %}
-                <h2 class="h3 mb-3 fw-normal">log in</h2>
-            
-                <div class="form-floating mt-2">
-                    <input type="text" name="username" class="form-control" placeholder="Enter your name..." />
-                    <label for="floatingInput">user name</label>
-                  </div>
-        
-        
-                <div class="form-floating mt-2">
-                    <input type="password" name="password" class="form-control" placeholder="password" />
-                    <label for="floatingInput">password</label>
-                </div>
-        
-            
-                <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">log in</button>
-              </form>
-        
-        </div>
+{% block content %}
+
+{% if msg %}
+
+    <div class="container">
+      <h1>Log In</h1>
+  
+      <form method="post" action="">
+          {% csrf_token %}
+          <h2 class="h3 mb-3 fw-normal">Log In</h2>
+      
+          <div class="form-floating mt-2">
+              <input type="text" name="username" class="form-control" placeholder="Enter your name..." />
+              <label for="floatingInput">user name</label>
+            </div>
+  
+  
+          <div class="form-floating mt-2">
+              <input type="password" name="password" class="form-control" placeholder="password" />
+              <label for="floatingInput">password</label>
+          </div>
+  
+      
+          <button class="w-100 btn btn-lg btn-primary mt-2 " type="submit">Log In</button>
+        </form>
+        <div style="color: red; font-size: x-large;" class="text-center">{{msg}}</div>
         <h5>You don't have an account ? you can <a href="{% url 'accounts:signup_page' %}">register</a></h5>
-    </body>
-</html>
+
+  {% endif %}
+   </div>
+
+
+   
+{% endblock %}
+
 
 
