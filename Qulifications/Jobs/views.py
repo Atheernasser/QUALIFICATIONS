@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpRequest,HttpResponse
 from .models import Jobtitle
+from django.shortcuts import get_object_or_404
+
+
 
 # Create your views here.
 
@@ -18,4 +21,7 @@ def home(request:HttpRequest):
 
 
 
-home.__doc__
+
+
+
+print(home.__doc__)

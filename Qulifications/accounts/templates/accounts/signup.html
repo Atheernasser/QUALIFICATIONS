@@ -24,6 +24,9 @@
                     <input type="password" name="password" class="form-control" placeholder="password" />
                     <label for="floatingInput">password</label>
                 </div>
+                {% if msg %}
+                  {{msg}}
+                {% endif %}
         
             
                 <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">create a new user</button>

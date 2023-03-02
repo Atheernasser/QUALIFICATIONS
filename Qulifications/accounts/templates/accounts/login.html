@@ -3,14 +3,14 @@
 
 {% block content %}
 
-{% if msg %}
+
+
 
     <div class="container">
-      <h1>Log In</h1>
   
       <form method="post" action="">
           {% csrf_token %}
-          <h2 class="h3 mb-3 fw-normal">Log In</h2>
+          <h2 class="h3 mb-3 fw-normal">Log In</h2> 
       
           <div class="form-floating mt-2">
               <input type="text" name="username" class="form-control" placeholder="Enter your name..." />
@@ -24,17 +24,18 @@
           </div>
   
       
-          <button class="w-100 btn btn-lg btn-primary mt-2 " type="submit">Log In</button>
+          <button class="w-100 btn btn-lg btn btn-primary mt-2 " type="submit">Log In</button>
         </form>
-        <div style="color: red; font-size: x-large;" class="text-center">{{msg}}</div>
+        {% if msg %}
+          <div style="color: red; font-size: x-large;" class="text-center">{{msg}}</div>
+        {% endif %}
         <h5>You don't have an account ? you can <a href="{% url 'accounts:signup_page' %}">register</a></h5>
 
-  {% endif %}
    </div>
 
 
    
-{% endblock %}
+{% endblock %} 
 
 
 
